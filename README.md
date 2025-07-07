@@ -60,7 +60,6 @@ Some features use email workflows (e.g., OTP). To view these emails, run **MailH
 Flags are only revealed after successful exploitation and are hidden from direct access. Use your skills to find and capture them!
 
 ---
----
 
 ## 👥 Default Credentials
 
