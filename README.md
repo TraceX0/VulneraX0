@@ -1,8 +1,11 @@
 # 🔥 VulneraX0 – A Modern Vulnerable Web App Lab
 
+![VulneraX0 UI Screenshot](./assets/vulnerax0-screenshot.png)
+
 **VulneraX0** is a modern, intentionally vulnerable web application designed for CTF players, cybersecurity learners, and ethical hackers to sharpen their skills on real-world web vulnerabilities — all in a secure and controlled environment.
 
 > 🎯 *Break it to learn it. Practice advanced exploitation techniques like DOM-based XSS, Race Conditions, IDOR, and more.*
+
 
 ---
 
@@ -55,6 +58,15 @@ Some features use email workflows (e.g., OTP). To view these emails, run **MailH
 
 ---
 
+## 👥 Default Credentials
+
+```
+admin / admin  
+john  / john
+```
+
+---
+
 ## 🛠️ Included Vulnerabilities
 
 | 🔐 Vulnerability Type                   | 📌 Description                                                                |
@@ -77,12 +89,18 @@ Flags are only revealed after successful exploitation and are hidden from direct
 
 ---
 
-## 👥 Default Credentials
+## 🧰 Tools & Wordlists
 
-```
-admin / admin  
-john  / john
-```
+- [`vulnerax0-fuzz.txt`](./vulnerax0-fuzz.txt): Useful payloads for quick fuzzing & testing input vectors.
+
+---
+
+## 📚 Writeups & Exploits
+
+Solutions, payload crafting, and walkthroughs will be published here:
+
+- 📝 Medium: [https://medium.com/@TraceX0](https://medium.com/@TraceX0)  
+- 📺 YouTube: [https://www.youtube.com/@TraceX0-0](https://www.youtube.com/@TraceX0-0)
 
 ---
 
