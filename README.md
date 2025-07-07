@@ -9,8 +9,8 @@
 ## 🚀 Quick Start (Docker)
 
 ```bash
-docker pull tracex0/vulnerax0-lab
-docker run -p 5000:5000 tracex0/vulnerax0-lab
+docker pull tracex0/vulnerax0
+docker run -p 5000:5000 tracex0/vulnerax0
 ```
 
 🔗 Visit the lab: [http://localhost:5000](http://localhost:5000)
