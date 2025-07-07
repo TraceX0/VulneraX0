@@ -10,32 +10,48 @@
 
 ```bash
 docker pull tracex0/vulnerax0
-docker run -p 5000:5000 tracex0/vulnerax0
+docker run --add-host=host.docker.internal:host-gateway -p 5000:5000 tracex0/vulnerax0
 ```
 
 🔗 Visit the lab: [http://localhost:5000](http://localhost:5000)
 
 ---
 
-## 📧 MailHog Setup
+## 📧 MailHog Setup 
 
 Some features use email workflows (e.g., OTP). To view these emails, run **MailHog** locally.
 
-### 🧾 Steps:
+### 🖥️ For **Linux / macOS**
 
-1. Download `MailHog.exe` from:  
+1. Download and run MailHog:
+
+   ```bash
+   wget https://github.com/mailhog/MailHog/releases/download/v1.0.1/MailHog_linux_amd64 -O MailHog
+   chmod +x MailHog
+   ./MailHog
+   ```
+
+---
+
+### 🪟 For **Windows**
+
+1. Download `MailHog.exe` from the official release page:  
    [https://github.com/mailhog/MailHog/releases](https://github.com/mailhog/MailHog/releases)
 
-2. In a **second terminal tab**, run:
+2. In a second terminal, run:
 
-```bash
-./MailHog.exe
-```
+   ```bash
+   MailHog.exe
+   ```
 
-3. Access MailHog Web UI at:  
-   [http://localhost:8025](http://localhost:8025)
+---
 
-> MailHog captures OTP emails sent by the app for testing.
+### 🌐 Access MailHog Web UI
+
+- Open your browser and visit:  
+  [http://localhost:8025](http://localhost:8025)
+
+> 🔐 MailHog captures OTP or email data sent by VulneraX0 so you can test your exploit flow.
 
 ---
 
