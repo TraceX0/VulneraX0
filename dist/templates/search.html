@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+{% block title %}Search {% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-8">
+    <h2>Search Transactions</h2>
+    <form method="get" class="mb-3">
+      <div class="input-group">
+        <input type="text" class="form-control" name="q" placeholder="Search..." value="{{ query }}">
+        <button type="submit" class="btn btn-primary">Search</button>
+      </div>
+    </form>
+    {% if results %}
+      <ul class="list-group">
+        {% for row in results %}
+          <li class="list-group-item">{{ row.details }}</li>
+        {% endfor %}
+      </ul>
+    {% elif query %}
+      <div class="alert alert-warning mt-3">No results found.</div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

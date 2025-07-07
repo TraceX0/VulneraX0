@@ -1,0 +1,56 @@
+{% extends 'layout.html' %}
+{% block title %}Balance Transfer (Race Condition){% endblock %}
+{% block content %}
+{% set bal_class = 'text-success' if balance > 0 else 'text-danger' %}
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <h2>Balance Transfer</h2>
+    <div class="mb-4">
+      <span class="fw-bold text-secondary" style="font-size:1.2rem;">Your balance:</span>
+      <span id="balance-amount" class="fw-bold {{ bal_class }}" style="font-size:2rem; letter-spacing:1px;">
+        ₹{{ balance }}
+      </span>
+    </div>
+    <form id="transfer-form" method="post" class="mb-3">
+      <div class="mb-3">
+        <label for="to_user" class="form-label">To User</label>
+        <input type="text" class="form-control" id="to_user" name="to_user" required>
+      </div>
+      <div class="mb-3">
+        <label for="amount" class="form-label">Amount</label>
+        <input type="number" class="form-control" id="amount" name="amount" required min="100">
+      </div>
+      <button type="submit" class="btn btn-danger">Transfer</button>
+    </form>
+    <div id="msg-area">
+      {% if msg %}
+        <div class="alert alert-info">{{ msg|replace('✅','')|replace('❌','') }}</div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+<script>
+  document.getElementById('transfer-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const formData = new FormData(form);
+    const response = await fetch(window.location.pathname, {
+      method: 'POST',
+      body: formData
+    });
+    const html = await response.text();
+    // Replace only the message area and update balance
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, 'text/html');
+    const newMsg = doc.getElementById('msg-area');
+    if (newMsg) document.getElementById('msg-area').innerHTML = newMsg.innerHTML;
+    // Fetch new balance from API
+    fetch('/api/balance').then(r => r.json()).then(data => {
+      document.getElementById('balance-amount').innerText = `₹${data.balance}`;
+      document.getElementById('balance-amount').className = 'fw-bold ' + (data.balance > 0 ? 'text-success' : 'text-danger');
+    });
+    // Optionally, clear form
+    form.reset();
+  });
+</script>
+{% endblock %}

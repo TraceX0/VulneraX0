@@ -1,0 +1,18 @@
+# Ignore development and sensitive files
+__pycache__/
+*.pyc
+*.pyo
+*.db
+*.sqlite3
+*.sh
+.vscode/
+.env
+venv/
+uploads/*
+seed_db.py
+exploit*
+README.md
+*.log
+.DS_Store
+.git/
+.gitignore

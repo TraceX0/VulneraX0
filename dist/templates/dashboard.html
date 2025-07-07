@@ -1,0 +1,126 @@
+{% extends 'layout.html' %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<style>
+  html, body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #e0e7ff 0%, #f8fafc 100%);
+    margin: 0;
+    padding: 0;
+  }
+  .dashboard-hero {
+    min-height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background: transparent;
+    margin: 0;
+    padding: 0 0 40px 0;
+  }
+  .dashboard-header {
+    margin-top: 40px;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+  .dashboard-title {
+    font-weight: 900;
+    font-size: 3rem;
+    letter-spacing: 2px;
+  }
+  .dashboard-about {
+    font-size: 1.2rem;
+    max-width: 900px;
+    margin: 0 auto 32px auto;
+    text-align: center;
+  }
+  .dashboard-cards-row {
+    max-width: 1200px;
+    margin: 0 auto 48px auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 32px;
+    flex-wrap: wrap;
+    padding: 0 16px;
+  }
+  .dashboard-card {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    padding: 32px 28px;
+    min-width: 280px;
+    max-width: 340px;
+    flex: 1 1 300px;
+    text-align: center;
+    margin: 12px 0;
+  }
+  .dashboard-card img {
+    width: 48px;
+    margin-bottom: 10px;
+  }
+  .dashboard-btn-row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60px;
+  }
+  .dashboard-footer {
+    width: 100%;
+    background: #222;
+    color: #fff;
+    padding: 24px 0 12px 0;
+    text-align: center;
+    margin-top: 0;
+    box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
+  }
+  .dashboard-footer a {
+    color: #4fd1c5;
+    text-decoration: none;
+    font-weight: 600;
+  }
+</style>
+<div class="dashboard-hero">
+  <div class="dashboard-header">
+    <img src="https://img.icons8.com/ios-filled/100/000000/security-checked.png" alt="VulneraX0 Logo" style="width:90px;opacity:0.85;">
+    <h1 class="dashboard-title mt-3 mb-2">VulneraX0</h1>
+    <p class="dashboard-about">
+      <strong>VulneraX0</strong> is your ultimate hacker playground—a safe, legal environment packed with real-world web vulnerabilities. Whether you're a bug bounty hunter, CTF player, or just starting your journey in cybersecurity, VulneraX0 lets you break, hack, and learn without limits.<br><br>
+      Sharpen your skills, test your payloads, and discover how attackers think—then learn how to defend!
+    </p>
+  </div>
+  <div class="dashboard-cards-row">
+    <div class="dashboard-card">
+      <img src="https://img.icons8.com/ios-filled/50/bug.png" alt="">
+      <h5 class="mt-2">Vulnerabilities Included</h5>
+      <ul class="list-unstyled small mb-0">
+        <li>Race Condition</li>
+        <li>DOM XSS</li>
+        <li>Reflected XSS</li>
+        <li>OTP Bypass</li>
+        <li>File Upload</li>
+        <li>...and more coming soon!</li>
+      </ul>
+    </div>
+    <div class="dashboard-card">
+      <img src="https://img.icons8.com/ios-filled/50/education.png" alt="">
+      <h5 class="mt-2">Educational</h5>
+      <p class="small mb-0">Perfect for students, CTF players, and anyone learning web security hands-on.</p>
+    </div>
+    <div class="dashboard-card">
+      <img src="https://img.icons8.com/ios-filled/50/lock-2.png" alt="">
+      <h5 class="mt-2">Safe Environment</h5>
+      <p class="small mb-0">Test and exploit vulnerabilities without legal or ethical concerns.</p>
+    </div>
+  </div>
+  <div class="dashboard-btn-row">
+    <a href="/profile" class="btn btn-primary btn-lg">Get Started</a>
+  </div>
+</div>
+<footer class="dashboard-footer">
+  <div>
+    Created by <a href="https://github.com/TraceX0" target="_blank">TraceX0</a>
+  </div>
+</footer>
+{% endblock %}
