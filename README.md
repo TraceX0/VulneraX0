@@ -1,6 +1,6 @@
 # 🔥 VulneraX0 – A Modern Vulnerable Web App Lab
 
-![VulneraX0 UI Screenshot](./assets/vulnerax0-screenshot.png)
+![VulneraX0 UI Screenshot](./assets/vulnerax0-screenshot.jng)
 
 **VulneraX0** is a modern, intentionally vulnerable web application designed for CTF players, cybersecurity learners, and ethical hackers to sharpen their skills on real-world web vulnerabilities — all in a secure and controlled environment.
 
