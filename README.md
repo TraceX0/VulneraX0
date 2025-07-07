@@ -8,18 +8,16 @@
 
 ## 🚀 Quick Start (Docker)
 
-No cloning, no building — get started instantly:
-
 ```bash
-docker pull yourdockerhubuser/vulnerax0-lab:latest
-docker run -p 5000:5000 yourdockerhubuser/vulnerax0-lab:latest
+docker pull tracex0/vulnerax0-lab
+docker run -p 5000:5000 tracex0/vulnerax0-lab
 ```
 
 🔗 Visit the lab: [http://localhost:5000](http://localhost:5000)
 
 ---
 
-## 📧 Email (MailHog Setup)
+## 📧 MailHog Setup
 
 Some features use email workflows (e.g., OTP). To view these emails, run **MailHog** locally.
 
@@ -43,28 +41,25 @@ Some features use email workflows (e.g., OTP). To view these emails, run **MailH
 
 ## 🛠️ Included Vulnerabilities
 
-| 🔐 Vulnerability Type              | 📌 Description                                                                 | 🎯 Flag |
-|-----------------------------------|------------------------------------------------------------------------------|--------|
-| Reflected XSS                     | Exploit reflected user input to trigger script execution.                   | ❌     |
-| DOM-based XSS                     | Classic payloads blocked. Only advanced ones like `<svg/onload=...>` work. | ✅     |
-| Race Condition                    | Abuse timing flaws to manipulate logic or cause inconsistencies.            | ❌     |
-| OTP Bypass / Bruteforce           | Brute-force OTP due to lack of rate limiting or protection.                 | ❌     |
-| IDOR (Insecure Direct Object Reference) | Access unauthorized data by modifying object identifiers.            | ❌     |
-| File Upload → RCE                | Exploit insecure file upload to gain remote code execution.                 | ✅     |
+| 🔐 Vulnerability Type                   | 📌 Description                                                                |
+| --------------------------------------- | ------------------------------------------------------------------------------ |
+| Reflected XSS                           | Exploit reflected user input to trigger script execution.                      |
+| DOM-based XSS                           | Classic payloads are blocked. Only advanced ones work.                         |
+| Race Condition                          | Abuse timing flaws to manipulate logic or cause inconsistencies.               |
+| OTP Bypass / Bruteforce                 | Brute-force OTP due to lack of rate limiting or protection.                    |
+| IDOR (Insecure Direct Object Reference) | Access unauthorized data by modifying object identifiers.                      |
+| File Upload → RCE                       | Exploit insecure file upload to gain remote code execution.                    |
 
 ---
 
-## 🧠 Coming Soon
+## 🏁 Flags
 
-More modern and complex vulnerabilities will be added soon:
+- 🧠 **DOM-based XSS**: Successful exploitation using advanced payloads will expose a hidden flag in the browser(use webhook or Burp collaborater to fetch flag).
+- 💣 **File Upload → RCE**: Exploiting the file upload mechanism to achieve remote code execution will reveal a flag stored on the server.
 
-- Cache Deception / Poisoning
-- Server-Side Request Forgery (SSRF)
-- JWT-based modern auth attacks
-- Dependency Confusion Attacks
-- Advanced XSS payload bypasses
-- And many more…
+Flags are only revealed after successful exploitation and are hidden from direct access. Use your skills to find and capture them!
 
+---
 ---
 
 ## 👥 Default Credentials
@@ -73,6 +68,19 @@ More modern and complex vulnerabilities will be added soon:
 admin / admin  
 john  / john
 ```
+
+---
+
+## 🧠 Coming Soon
+
+More modern and complex vulnerabilities will be added soon:
+
+- Cache Poisoning/Deception
+- Server-Side Request Forgery (SSRF)
+- JWT-based modern auth attacks
+- Dependency Confusion Attacks
+- Advanced XSS payload bypasses
+- And many more…
 
 ---
 
@@ -87,7 +95,6 @@ All vulnerabilities are intentional and meant for safe security practice.
 ## 🙌 Credits
 
 Built with ❤️ by **TraceX0**  
-GitHub: [https://github.com/yourusername/vulnerax0](https://github.com/yourusername/vulnerax0)
 
 ---
 
