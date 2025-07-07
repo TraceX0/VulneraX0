@@ -114,4 +114,4 @@ Built with ❤️ by **TraceX0**
 ---
 
 **Happy Hacking!** 🕵️‍♂️  
-*Explore. Exploit. Educate.*
+*Hack smart. Break quiet. Ship loud.*
