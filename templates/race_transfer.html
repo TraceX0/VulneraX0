@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+{% block title %}TimedTransferDesync (Race Condition){% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <h2>TimedTransferDesync</h2>
+    <div class="mb-3">
+      <span class="fw-bold text-secondary">Your balance:</span>
+      <span class="fw-bold text-success" style="font-size:1.5rem;">₹{{ balance }}</span>
+    </div>
+    <div class="mb-3">
+      <span class="fw-bold text-secondary">Daily limit remaining:</span>
+      <span class="fw-bold text-primary" style="font-size:1.2rem;">₹{{ remaining_limit }}</span>
+    </div>
+    <form method="post" class="mb-3">
+      <div class="mb-3">
+        <label for="to_user" class="form-label">To User</label>
+        <input type="text" class="form-control" id="to_user" name="to_user" required>
+      </div>
+      <div class="mb-3">
+        <label for="amount" class="form-label">Amount</label>
+        <input type="number" class="form-control" id="amount" name="amount" required min="1" max="5000">
+      </div>
+      <button type="submit" class="btn btn-warning">Send</button>
+    </form>
+    {% if msg %}
+      <div class="alert alert-info mt-3">{{ msg }}</div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

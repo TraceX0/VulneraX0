@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  lab:
+    build: .
+    container_name: vulnerax0_lab
+    ports:
+      - "5000:5000"  # Flask app
+    depends_on:
+      - mailhog
+    restart: always
+
+  mailhog:
+    image: mailhog/mailhog
+    container_name: vulnerax0_mailhog
+    ports:
+      - "8025:8025"  # Web UI for Mailhog
+      - "1025:1025"  # SMTP port
+    restart: always
