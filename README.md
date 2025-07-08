@@ -112,7 +112,7 @@ More modern and complex vulnerabilities will be added soon:
 - Server-Side Request Forgery (SSRF)
 - JWT-based modern auth attacks
 - Dependency Confusion Attacks
-- Advanced XSS payload bypasses
+- SQL Injection
 - And many more…
 
 ---
